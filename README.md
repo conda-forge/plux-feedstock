@@ -1,11 +1,11 @@
-About plux
-==========
+About plux-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/plux-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/localstack/plux
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/plux-feedstock/blob/main/LICENSE.txt)
 
 Summary: Dynamic code loading framework used in LocalStack
 
