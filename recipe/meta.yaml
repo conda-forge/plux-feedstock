@@ -1,5 +1,5 @@
 {% set name = "plux" %}
-{% set version = "1.13.0" %}
+{% set version = "1.14.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0358a618883be270cf8dd6b5ae48e633a7fecd386cff6347c8560116f4688a75
+  sha256: e335d0bb4b67e1cb18abce8b92370568394f75edfb8505398f51c577525467fe
 
 build:
   number: 0
