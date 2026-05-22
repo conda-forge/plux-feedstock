@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  name: plux
+  version: "1.14.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: e335d0bb4b67e1cb18abce8b92370568394f75edfb8505398f51c577525467fe
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}
+    - pytest-runner
+    - setuptools
+    - wheel
+  run:
+    - python >=${{ python_min }}
+    - stevedore >=3.4
+
+tests:
+  - python:
+      imports:
+        - plugin
+      # pip_check: false
+      python_version:
+        - ${{ python_min }}
+        - '*'
+  - requirements:
+      run:
+        - python ${{ python_min }}
+    script:
+      - python -c "import importlib.util; assert importlib.util.find_spec('plugin')"
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Dynamic code loading framework used in LocalStack
+  homepage: https://github.com/localstack/plux
+  repository: https://github.com/localstack/plux
+  documentation: https://pypi.org/project/plux/
+
+extra:
+  recipe-maintainers:
+    - raybellwaves
+    - xhochy
