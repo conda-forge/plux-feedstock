@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - pytest-runner
-    - setuptools
-    - wheel
+    - hatchling
+    - hatch-vcs
   run:
     - python >=${{ python_min }}
     - stevedore >=3.4
@@ -31,16 +31,11 @@ requirements:
 tests:
   - python:
       imports:
-        - plugin
-      # pip_check: false
+        - plux
       python_version:
-        - ${{ python_min }}
         - '*'
-  - requirements:
-      run:
-        - python ${{ python_min }}
-    script:
-      - python -c "import importlib.util; assert importlib.util.find_spec('plugin')"
+        - ${{ python_min }}.*
+      pip_check: true
 
 about:
   license: Apache-2.0
