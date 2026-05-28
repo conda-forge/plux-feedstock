@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: plux
-  version: "1.14.0"
+  version: "1.16.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: e335d0bb4b67e1cb18abce8b92370568394f75edfb8505398f51c577525467fe
+  sha256: 226ed9dbb52f0ed64ee1969d541544e2e67af6da010b7ecebcf145c20e92245a
 
 build:
   number: 0
